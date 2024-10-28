@@ -1,0 +1,26 @@
+name: Debian packages CI
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Debian packages
+      run: |
+        make build-deb
+        cp ../*gdd-system*.* ./
+    - name: Archive Debian packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: debian-dist-packages
+        path: |
+          *gdd-system*.*
+    - name: GH Release
+      uses: softprops/action-gh-release@v2.0.8
+      with:
+        files: "../*.deb"
