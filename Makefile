@@ -1,11 +1,22 @@
+PACKAGE_META_NAME := gdd-system
+DEBIAN_BRANCH := master
+NO_APT = yes
+
 all:
 
 deb-deps:
-	sudo apt update -q && sudo apt install -y -q \
-		debhelper
+	apt update -q && apt install -y -q \
+		debhelper git-buildpackage
 
+ifneq (${NO_APT}, yes)
 build-deb: deb-deps
+endif
+
+build-deb:
 	dpkg-buildpackage --build=binary --unsigned-changes
+
+deb-install:
+	apt install ../*$(PACKAGE_META_NAME)*.deb
 
 new-version: debian/changelog
 	@gbp dch; \
