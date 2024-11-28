@@ -1,3 +1,9 @@
+gdd-system (0.0.6) unstable; urgency=medium
+
+  * workflow: run as `sudo`
+
+ -- Gregory DAVID <gdd@p1sec.com>  Thu, 28 Nov 2024 15:35:31 +0100
+
 gdd-system (0.0.5) unstable; urgency=medium
 
   * workflow: make sure to install needed dependencies on GitHub Actions
