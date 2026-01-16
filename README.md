@@ -9,5 +9,6 @@ Security computer system.
 
 ### Debian packages
 
+- `build-essential`
 - `debhelper`
 - `git-buildpackage`
