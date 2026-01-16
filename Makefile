@@ -6,7 +6,7 @@ all:
 
 deb-deps:
 	apt update -q && apt install -y -q \
-		debhelper git-buildpackage
+		build-essential debhelper git-buildpackage
 
 ifneq (${NO_APT}, yes)
 build-deb: deb-deps
