@@ -1,3 +1,9 @@
+gdd-system (0.0.7) unstable; urgency=medium
+
+  * packages: remove `audiotools` since it is not in Debian repo anymore
+
+ -- Gregory DAVID <gdd@p1sec.com>  Fri, 16 Jan 2026 12:15:13 +0100
+
 gdd-system (0.0.6) unstable; urgency=medium
 
   * workflow: run as `sudo`
